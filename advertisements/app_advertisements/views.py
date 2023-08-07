@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from .models import Advertisement
 from django.shortcuts import render
 
 
@@ -10,3 +11,6 @@ def lessonFour(request):
 
 def top_sellers(request):
     return render(request, 'top-sellers.html')
+
+def index(request):
+    advertisements = Advertisement.objects.all()
